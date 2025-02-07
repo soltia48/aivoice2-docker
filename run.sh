@@ -1,5 +1,7 @@
 #!/bin/bash
 
+docker build . --tag aivoice2
+
 xhost +local:
 
 docker run --rm -it \
