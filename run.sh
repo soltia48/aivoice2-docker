@@ -1,3 +1,7 @@
+#!/bin/bash
+
+xhost +local:
+
 docker run --rm -it \
     -u $(id -u ${USER}):$(id -g ${USER}) \
     -e PULSE_COOKIE=/tmp/pulse/cookie \
@@ -10,3 +14,5 @@ docker run --rm -it \
     -v ~/.config/pulse/cookie:/tmp/pulse/cookie:ro \
     -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
     aivoice2
+
+xhost -local:
